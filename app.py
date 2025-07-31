@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
+import logging
 import os
 
 app = Flask(__name__)
@@ -11,6 +12,11 @@ app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
 app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
 
 mail = Mail(app)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -45,12 +51,15 @@ def home():
 
             mail.send(msg)
             email_sent = True
-        except:
+            logging.info("Mail envoyé avec succès !")
+        except Exception as e:
             email_sent = False
+            logging.error("Mail error:", e)
     elif request.method == "GET":
         pass
     else:
         email_sent = False
+        logging.error("Mail error")
 
     return render_template('index.html', icon_per_line = icon_per_line, email_sent = email_sent)
 
