@@ -54,7 +54,7 @@ def home():
             logging.info("Mail envoyé avec succès !")
         except Exception as e:
             email_sent = False
-            logging.error("Mail error:", e)
+            logging.error(f"Mail error: {e}")
     elif request.method == "GET":
         pass
     else:
