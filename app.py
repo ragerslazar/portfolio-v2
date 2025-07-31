@@ -1,3 +1,5 @@
+from typing import Optional
+
 from flask import Flask, render_template, request
 from flask_mail import Mail
 import logging
@@ -24,7 +26,7 @@ logging.basicConfig(
 def home():
     user_agent: str = request.headers.get("User-Agent")
     icon_per_line: int = 6 if "Mobile" in user_agent else 9
-    email_sent: bool = None
+    email_sent: Optional[bool] = None
 
     if request.method == "POST" and request.form["email"] != "":
         mailer = Mailer(request, mail, app, logging)
