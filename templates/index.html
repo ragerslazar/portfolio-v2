@@ -1,0 +1,300 @@
+    {% extends "base.html" %}
+    {% block title %}Portfolio Accueil{% endblock title %}
+
+
+    {% block content %}
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Lazar Lazarevic</h1>
+                    <p>Jeune Développeur Back-end, je cherche à participer à la révolution du monde digital, en créant des solutions intuitives et accessibles à tout le monde !</p>
+                    <a href="#about" class="cta-button">En savoir plus</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGOy3eas1KgeA/profile-displayphoto-shrink_800_800/B4EZVJCcZVHcAc-/0/1740687133329?e=1756944000&v=beta&t=cnFlUMuW6CJqbCTlDjm9zP0Rag7hwobfPeckV5KK_FY" alt="profile picture" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Développeur Back-End</h3>
+                    <p>Je crée des applications côté serveur avec une attention particulière à l'avancée du projet, et à ne pas casser la prod...</p>
+                    <p>Constamment en apprentissage, je suis envouté par l’idée de progresser et de créer des systèmes plus performants et plus fiables à chaque projet.
+                    Vous pouvez observez juste à droite, les technologies avec lesquelles je travaille !</p>
+                </div>
+                <div class="skills">
+                    <img src="https://skillicons.dev/icons?i=html,css,php,js,py,java,bootstrap,postgresql,mysql,git,github,docker,vscode,idea,pycharm,phpstorm,linux,windows&perline={{icon_per_line}}" alt="competences"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/portfolio.jpg') }}" alt="Portfolio (image by vectorjuice)" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio</h3>
+                        <p>Portfolio actuel.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                        </div>
+                        <a href="https://github.com/ragerslazar/portfolio-v2" target="_blank" class="project-link">
+                            Voir détails
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{url_for('static', filename='images/location_laloc.jpg')}}" alt="Location de véhicule" />
+                    </div>
+                    <div class="project-info">
+                        <h3>LALOC</h3>
+                        <p>Application Web permettant la location de véhicule.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">PHPMyAdmin</span>
+                            <span class="project-tag">MVC</span>
+                            <span class="project-tag">PHPUnit</span>
+                        </div>
+                        <a href="https://github.com/ragerslazar/LALOC" target="_blank" class="project-link">
+                            Voir détails
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{url_for('static', filename='images/laloc_cm.jpg')}}" alt="Gestion de véhicule à la location" />
+                    </div>
+                    <div class="project-info">
+                        <h3>LALOC's Car Manager</h3>
+                        <p>Application de gestion de véhicule disponible à la location pour le projet LALOC.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">MVC</span>
+                            <span class="project-tag">JUnit</span>
+                        </div>
+                        <a href="https://github.com/ragerslazar/laloc-car-manager" target="_blank" class="project-link">
+                            Voir détails
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{url_for('static', filename='images/morpion.jpg')}}" alt="Morpion" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Morpion</h3>
+                        <p>Le jeu Morpion en CLI.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                        </div>
+                        <a href="https://github.com/ragerslazar/Morpion" target="_blank" class="project-link">
+                            Voir détails
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Formations</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - 2025</span>
+                        <h3>Concepteur Développeur d'Applications</h3>
+                        <h4>GRETA 77, Lognes</h4>
+                        <p>BAC+3</p> <br>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">POO</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Laragon</span>
+                            <span class="project-tag">UML</span>
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Git</span>
+                            <span class="project-tag">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3>BTS SIO (Services Informatiques aux Organisations)</h3>
+                        <h4>Lycée Franklin Roosevelt, Reims</h4>
+                        <p>BAC+2.</p>
+                        <p>Option SLAM.</p> <br>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">Postgresql</span>
+                            <span class="project-tag">Linux (Mint)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019 - 2021</span>
+                        <h3>BAC STI2D</h3>
+                        <h4>Lycée Jules Verne, Château-Thierry</h4>
+                        <p>Option SIN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Expériences</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Février 2025 - Avril 2025</span>
+                        <h3>Stagiaire Développeur Back-end</h3>
+                        <h4>Dataleon, Paris</h4>
+                        <p>
+                        - Développement de scripts en Python destinés à l'optimisation des ressources de l'entreprise. (Traitement de métadonnées, réduction de taille des fichiers...)<br>
+                        - Machine Learning.<br>
+                        - Gestion des différents modèles via HuggingFace.<br>
+                        - Centralisation des utilisateurs sur HubSpot via l'API HUBSPOT en TypeScript, pour un suivi de clients automatisé.<br>
+                        - Création & fix des tests unitaires avec PyTest.<br>
+                        - Stack : VSCode, Git, GitHub, Docker, Python, HuggingFace, Notion, Slack.<br>
+                        - Méthodologie Agile.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Janvier 2023 - Février 2023</span>
+                        <h3>Stagiaire Consultant BPM</h3>
+                        <h4>L'aiguillage, Etampes-Sur-Marne</h4>
+                        <p>
+                        - Création de formulaire pour différents besoins, avec une solution "BPM".<br>
+                        - Confirmation par mail pour certaines demandes particulières par son responsable service.<br>
+                        - Support informatique et interventions sur site.<br>
+                        - Stack technique: DAMAAAS.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mai 2022 - Juillet 2022</span>
+                        <h3>Stagiaire Testeur d'Applications</h3>
+                        <h4>Novacel, Château-Thierry</h4>
+                        <p>
+                        - Création de tests unitaires sur la boutique en ligne.<br>
+                        - Stack technique: Cypress, JavaScript, GitHub, VSCode, Docker.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Entrez en contact avec moi !</h3>
+                    <p>Je suis actuellement ouvert aux propositions d'emplois en tant que Développeur axé sur le Back-end, en CDD/CDI sur la région d'Ile-de-France principalement et dans l'Aisne. Vous pouvez me joindre via ce formulaire, via mon LinkedIn ou par e-mail.</p>
+                   <!-- <div class="contact-method">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                        </svg>
+                        <span> </span>
+                    </div> -->
+                    <div class="contact-method">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                        <span>Paris, France</span>
+                    </div>
+                    <div class="contact-method">
+                        <img src="https://skillicons.dev/icons?i=linkedin" alt="">
+                        <span><a href="https://www.linkedin.com/in/lazar-la2103" target="_blank">LinkedIn</a></span>
+                    </div>
+                    <div class="contact-method">
+                        <img src="https://skillicons.dev/icons?i=github" alt="">
+                        <span><a href="https://www.github.com/ragerslazar" target="_blank">GitHub</a></span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock content %} 
