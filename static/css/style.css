@@ -531,6 +531,24 @@ nav {
     margin-right: 2%;
 }
 
+.status-box {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+}
+
+.status-success {
+  background-color: #4CAF50;
+  border: 2px solid #388E3C;
+}
+
+.status-error {
+  background-color: #F44336;
+  border: 2px solid #D32F2F;
+}
+
 /* Footer */
 footer {
     background-color: var(--dark);

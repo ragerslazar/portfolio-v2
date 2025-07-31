@@ -270,7 +270,16 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    {% if email_sent %}
+                      <div class="status-box status-success">
+                        ✅ Message envoyé avec succès !
+                      </div>
+                    {% elif email_sent == False %}
+                      <div class="status-box status-error">
+                        ⛔ Échec de l'envoi du message.
+                      </div>
+                    {% endif %}
+                    <form id="contactForm" method="post" action="{{url_for('home')}}#contact">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input type="text" id="name" name="name" required>
