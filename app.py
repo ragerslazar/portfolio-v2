@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
-from flask_mail import Mail, Message
+from flask_mail import Mail
 import logging
 import os
+from services.mailer import Mailer
 
 app = Flask(__name__)
 
@@ -26,35 +27,8 @@ def home():
     email_sent: bool = None
 
     if request.method == "POST" and request.form["email"] != "":
-        try:
-            name: str = request.form["name"]
-            prenom: str = request.form["prenom"]
-            email: str = request.form["email"]
-            subject: str = request.form["subject"]
-            message: str = request.form["message"]
-
-            msg = Message("📨 Nouveau message [Portfolio]",
-                          sender=app.config['MAIL_USERNAME'],
-                          recipients=[app.config['MAIL_USERNAME']])
-            msg.body = f"""
-            📨 Nouveau message reçu depuis ton portfolio
-    
-            👤 Informations du visiteur :
-            - Nom : {name}
-            - Prénom : {prenom}
-            - Email : {email}
-            - Sujet : {subject}
-    
-            📝 Message :
-            {message}
-            """
-
-            mail.send(msg)
-            email_sent = True
-            logging.info("Mail envoyé avec succès !")
-        except Exception as e:
-            email_sent = False
-            logging.error(f"Mail error: {e}")
+        mailer = Mailer(request, mail, app, logging)
+        email_sent = mailer.sendMail()
     elif request.method == "GET":
         pass
     else:
@@ -64,4 +38,5 @@ def home():
     return render_template('index.html', icon_per_line = icon_per_line, email_sent = email_sent)
 
 if __name__ == '__main__':
+    logging.info("Application starting")
     app.run(debug=True, host="0.0.0.0")
