@@ -1,6 +1,6 @@
 from logging import Logger
 from typing import Optional
-from flask import Flask, Request
+from flask import Flask
 from flask_mail import Mail, Message
 from forms.ContactForm import ContactForm
 
