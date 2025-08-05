@@ -8,11 +8,11 @@ from flask_mail import Mail, Message
 class Mailer:
     def __init__(self, request: Request, mail_app: Mail, app: Flask, logging: Logger):
         self.request: Request = request
-        self.name: str = self.request.form["name"]
-        self.prenom: str = self.request.form["prenom"]
-        self.email: str = self.request.form["email"]
-        self.subject: str = self.request.form["subject"]
-        self.message: str = self.request.form["message"]
+        self.name: Optional[str] = self.request.form.get("name") or None
+        self.prenom: Optional[str] = self.request.form.get("prenom") or None
+        self.email: Optional[str] = self.request.form.get("email") or None
+        self.subject: Optional[str] = self.request.form.get("subject") or None
+        self.message: Optional[str] = self.request.form.get("message") or None
         self.mail: Mail = mail_app
         self.app: Flask = app
         self.logging: Logger = logging
