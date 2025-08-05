@@ -1,18 +1,17 @@
 from logging import Logger
 from typing import Optional
-
 from flask import Flask, Request
 from flask_mail import Mail, Message
-
+from forms.ContactForm import ContactForm
 
 class Mailer:
-    def __init__(self, request: Request, mail_app: Mail, app: Flask, logging: Logger):
-        self.request: Request = request
-        self.name: Optional[str] = self.request.form.get("name") or None
-        self.prenom: Optional[str] = self.request.form.get("prenom") or None
-        self.email: Optional[str] = self.request.form.get("email") or None
-        self.subject: Optional[str] = self.request.form.get("subject") or None
-        self.message: Optional[str] = self.request.form.get("message") or None
+    def __init__(self, form: ContactForm, mail_app: Mail, app: Flask, logging: Logger):
+        self.form: ContactForm = form
+        self.name: Optional[str] = self.form.name.data
+        self.prenom: Optional[str] = self.form.prenom.data
+        self.email: Optional[str] = self.form.email.data
+        self.subject: Optional[str] = self.form.subject.data
+        self.message: Optional[str] = self.form.message.data
         self.mail: Mail = mail_app
         self.app: Flask = app
         self.logging: Logger = logging
