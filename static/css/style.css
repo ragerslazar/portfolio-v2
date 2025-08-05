@@ -549,6 +549,10 @@ nav {
   border: 2px solid #D32F2F;
 }
 
+.error {
+    color: red;
+}
+
 /* Footer */
 footer {
     background-color: var(--dark);
