@@ -595,10 +595,10 @@ footer {
 
 /* Socials Links */
 a.social-link:visited {
-    color: inherit; /* ou une autre couleur de ton choix */
+    color: inherit;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
@@ -647,7 +647,7 @@ a.social-link:visited {
     }
 
     .hamburger {
-        display: flex; /* Affiche le bouton hamburger */
+        display: flex;
     }
 
     .nav-links {
@@ -658,14 +658,14 @@ a.social-link:visited {
         left: 0;
         right: 0;
         background-color: var(--primary);
-        max-height: 0; /* Commence avec une hauteur nulle */
-        overflow: hidden; /* Cache le contenu qui dépasse */
-        transition: max-height 0.5s ease-in-out; /* Animation de 0.5s */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
     }
 
     .nav-links.active {
-        max-height: 500px; /* Hauteur suffisante pour montrer tous les liens */
-        display: flex; /* Affiche les liens lorsque le menu est actif */
+        max-height: 500px;
+        display: flex;
     }
 }
 
@@ -689,4 +689,8 @@ a.social-link:visited {
     .hero-image img {
         max-width: 300px;
     }
+
+    .contact-method img {
+    margin-right: 3%;
+}
 }
