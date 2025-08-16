@@ -1,6 +1,6 @@
 from typing import Optional
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from flask_mail import Mail
 import logging
 from config import Config
@@ -28,9 +28,11 @@ def home():
         if form.validate_on_submit():
             mailer = Mailer(form, mail, app, logger)
             email_sent = mailer.sendMail()
+            flash("Votre message à bien été envoyé !", "success")
         else:
             email_sent = False
             logger.error("Mail error")
+            flash("Erreur lors de l'envoi du message. Veuillez réessayer !", "error")
 
     user_agent: str = request.headers.get("User-Agent")
     icon_per_line: int = 6 if "Mobile" in user_agent else 9

@@ -311,15 +311,13 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    {% if email_sent %}
-                      <div class="status-box status-success">
-                        ✅ Message envoyé avec succès !
-                      </div>
-                    {% elif email_sent == False %}
-                      <div class="status-box status-error">
-                        ⛔ Échec de l'envoi du message.
-                      </div>
-                    {% endif %}
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="status-box status-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
                     <form id="contactForm" method="post" action="{{ url_for('home') }}#contact">
                     {{ form.hidden_tag() }}
 
